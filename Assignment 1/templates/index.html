@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <header><h1>Welcome To My Apps</h1></header>
+    <div class="container">
+        <a href="/convert_score">
+            <div class="lazyLoaded">
+                <img src="{{ url_for('static', filename='image/convert_score.jpg') }}" alt="">
+                <p>Convert Score</p>
+            </div>
+        </a>
+        <a href="/square_root">
+            <div class="lazyLoaded">
+                <img src="{{ url_for('static', filename='image/square_root.png') }}" alt="">
+                <p>Square Root</p>
+            </div>
+        </a>
+        <a href="/hypotenuse">
+            <div class="lazyLoaded">
+                <img src="{{ url_for('static', filename='image/hypotenuse.png') }}" alt="">
+                <p>Hypotenuse</p>
+            </div>
+        </a>
+    </div>
+{% endblock %}

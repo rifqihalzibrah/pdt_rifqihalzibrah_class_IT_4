@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/index.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <nav>
+        <a href="/" class="home"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="" class="home"></a>
+        <ul>
+            <li><a href="/convert_score">Convert Score</a></li>
+            <li><a href="/square_root">Square Root</a></li>
+            <li><a href="/hypotenuse">Hypotenuse</a></li>
+        </ul>
+    </nav>
+    <h1>Hi! this is Square Root page</h1>
+    <section class="form">
+        <div class="row">
+            <div class="col-25">
+                <label for="square_root_number">Square Root</label>
+            </div>
+            <div class="col-75">
+                <input type="number" id="square_root_number" name="square_root_number" placeholder="Enter number..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="square_root_result">Result</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="square_root_result" name="square_root_result" placeholder="Your result is here" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <input type="button" onclick="squareRoot()" value="Find Square Root">
+        </div>
+    </section>
+{% endblock %}

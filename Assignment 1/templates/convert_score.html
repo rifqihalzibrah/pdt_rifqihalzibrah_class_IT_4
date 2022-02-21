@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='javascript/index.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <nav>
+        <a href="/" class="home"><img src="{{ url_for('static', filename='image/logo.png') }}" alt="" class="home"></a>
+        <ul>
+            <li><a href="/convert_score">Convert Score</a></li>
+            <li><a href="/square_root">Square Root</a></li>
+            <li><a href="/hypotenuse">Hypotenuse</a></li>
+        </ul>
+    </nav>
+    <h1>Hi! this is Convert Score page</h1>
+    <section class="form">
+        <div class="row">
+            <div class="col-25">
+                <label for="score">Score</label>
+            </div>
+            <div class="col-75">
+                <input type="number" id="score" name="score" placeholder="Enter your score..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="convert_score_result">Grade</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="convert_score_result" name="convert_score_result" placeholder="Your grade is here" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <input type="button" onclick="convertScore()" value="Convert">
+        </div>
+    </section>
+{% endblock %}
