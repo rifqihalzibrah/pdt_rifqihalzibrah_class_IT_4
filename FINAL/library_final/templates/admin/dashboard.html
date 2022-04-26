@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="d-flex">
+  <div class="container px-4" id="custom-cards">
+    <h2 class="pb-2">Dashboard</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 text-center">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+          style="background-image: url('unsplash-photo-1.jpg');">
+          <div class="d-flex flex-column h-100 p-3  text-white text-shadow-1">
+            <h1 class="pt-5 display-6 lh-1 fw-bold">{{ results_books }}</h1>
+            <h2 class="mb-4 display-6 lh-1 fw-bold">Books</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+              </li>
+              <li class="d-flex align-items-center me-3">
+              </li>
+              <li class="d-flex align-items-center">
+                <a href="{{ url_for('book.home') }}" class="text-decoration-none"><small>View More</small></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+          style="background-image: url('unsplash-photo-2.jpg');">
+          <div class="d-flex flex-column h-100 p-3  text-white text-shadow-1">
+            <h1 class="pt-5 display-6 lh-1 fw-bold">{{ results_categories }}</h1>
+            <h2 class="mb-4 display-6 lh-1 fw-bold">Categories</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+              </li>
+              <li class="d-flex align-items-center me-3">
+              </li>
+              <li class="d-flex align-items-center">
+                <a href="{{ url_for('category.home') }}" class="text-decoration-none"><small>View More</small></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+          style="background-image: url('unsplash-photo-3.jpg');">
+          <div class="d-flex flex-column h-100 p-3  text-shadow-1">
+            <h1 class="pt-5 display-6 lh-1 fw-bold">{{ results_users }}</h1>
+            <h2 class="mb-4 display-6 lh-1 fw-bold">Students</h2>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+              </li>
+              <li class="d-flex align-items-center me-3">
+              </li>
+              <li class="d-flex align-items-center">
+                <a href="{{ url_for('user.list_all_students') }}" class="text-decoration-none"><small>View
+                    More</small></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

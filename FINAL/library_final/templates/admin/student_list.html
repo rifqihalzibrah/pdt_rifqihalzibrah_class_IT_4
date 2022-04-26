@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+List of Students
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row mt-3">
+        {% if students %}
+        <p>
+            List of Students
+        </p>
+        <table class="table table-sm table-borderless">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Borrowing</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for id, username, name, password, borrowing in students %}
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ borrowing }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+
+    {% if get_flashed_messages() %}
+    <div class="row mt-3">
+        {% for msg in get_flashed_messages() %}
+        <span>{{ msg }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</div>
+
+<div class="mt-5">
+    <a href="{{ url_for('home') }}">Home</a>
+</div>
+{% endblock %}
